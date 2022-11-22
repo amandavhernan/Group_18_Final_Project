@@ -9,27 +9,33 @@
 <body>
     <div class="wrapper">
         <header class="header">
-            <h1>Public Safety Tracker</h1>
+            <h1 style="color:#005C29">Public Safety Tracker</h1>
             <h3>Tracking Crime and Safety Across Prince George's County</h3>
         </header>
         <div class="container">
 
             <div class="left_section box">
-                <h3>Form Inputs</h3>
-                <form action="/api" class="small_box main_form">
-                    <div>
-                        <label for="resto">Filter Restaurant List</label>
-                        <input type="text" name="resto" id="resto">
-                    </div>
-                    <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
-                    <button type="submit" id="get-resto" class="button">Change Restaurants</button>
-                </form>
+                <h4>Top Left Viz</h4>
             </div>
 
             <div class="right_section box">
-                <h3>Local Restaurant Map</h3>
-                <div id="map"></div>
-                <div id="restaurant_list" class="small_box">A list of local restaurants from an API</div>
+                <h4>Bottom Left Viz</h4>
+            </div>  
+
+            <div class="right_section box">
+                <h4>Center PG County Map</h4>
+            </div>  
+
+            <div class="right_section box">
+                <h4>Top Right Crime Stat</h4>
+            </div>  
+
+            <div class="right_section box">
+                <h4>Center Crime Stat</h4>
+            </div>  
+
+            <div class="right_section box">
+                <h4>Bottom Right Crime Stat</h4>
             </div>  
 
         </div>
