@@ -1,76 +1,3 @@
-#map {
-    height: 380px;
-    display: block;
-    width: 400px;
-    border: 3px dotted #008081;
-    margin-bottom: 1rem;
-}
-
-.lds-ellipsis {
-    display: inline-block;
-    position: relative;
-    width: 80px;
-    height: 80px;
-  }
-
-.lds-ellipsis_hidden {
-  display: hidden;
-}
-
-  .lds-ellipsis div {
-    position: absolute;
-    top: 33px;
-    width: 13px;
-    height: 13px;
-    border-radius: 50%;
-    background: #fff;
-    animation-timing-function: cubic-bezier(0, 1, 1, 0);
-  }
-  .lds-ellipsis div:nth-child(1) {
-    left: 8px;
-    animation: lds-ellipsis1 0.6s infinite;
-  }
-  .lds-ellipsis div:nth-child(2) {
-    left: 8px;
-    animation: lds-ellipsis2 0.6s infinite;
-  }
-  .lds-ellipsis div:nth-child(3) {
-    left: 32px;
-    animation: lds-ellipsis2 0.6s infinite;
-  }
-  .lds-ellipsis div:nth-child(4) {
-    left: 56px;
-    animation: lds-ellipsis3 0.6s infinite;
-  }
-  @keyframes lds-ellipsis1 {
-    0% {
-      transform: scale(0);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-  @keyframes lds-ellipsis3 {
-    0% {
-      transform: scale(1);
-    }
-    100% {
-      transform: scale(0);
-    }
-  }
-  @keyframes lds-ellipsis2 {
-    0% {
-      transform: translate(0, 0);
-    }
-    100% {
-      transform: translate(24px, 0);
-    }
-  }
-  
-  * {
-    box-sizing: border-box;
-}
-  
 html {
     background-color: #fff;
     font-size: 16px;
@@ -91,7 +18,7 @@ body {
     font-family: ‘Segoe UI’, Candara, ‘Bitstream Vera Sans’, ‘DejaVu Sans’, ‘Bitsream Vera Sans’, ‘Trebuchet MS’, Verdana, ‘Verdana Ref’, sans-serif;
     font-weight: 400;
     line-height: 1.5;
-    background-color: #41B3A3;
+    background-color: whitesmoke;
 }
   
 a {
@@ -99,7 +26,7 @@ a {
     text-decoration: none;
 }
   
-h3 {
+h4 {
     margin:0;
     padding:0;
     padding-bottom:1.5rem;
@@ -128,39 +55,14 @@ h3 {
     padding-bottom: 1.5rem;
 }
   
-.header h1 {
+.header h1, h3 {
     display: block;
-    background-color: #E27D60;
-    color: white;
-    border-radius: 6px;
-    font-size: 1.5rem;
-    padding: 1.25rem;
-    margin:0;
-    box-shadow: #db6c4d 5px 5px, #e07355 10px 10px, #dd846b 15px 15px, #da9480 20px 20px, #e2a898 25px 25px;
-}
-  
-.button {
-    background-color:#C38D9E;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-    border: none;
-    border-radius: 4px;
-    color: white;
-    font-weight: bold;
-    padding: 15px 32px;
     text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-}
-  
-.button:hover {
-    background-color:#a5687c;
-    transition: 0.10s;
 }
   
 .box {
     border: 3px solid;
-    border-color: #008081;
+    border-color: #005C29;
     border-radius: 4px;
     width: fit-content;
     height:fit-content;
@@ -170,7 +72,7 @@ h3 {
   
 .small_box {
     border: 3px dotted;
-    border-color: #008081;
+    border-color: #005C29;
     border-radius: 4px;
     width: fit-content;
     height:fit-content;
@@ -179,14 +81,14 @@ h3 {
 }
   
 .left_section {
-    background-color: #85dcba;
+    background-color: #005C29;
     flex: 0 1 auto;
     margin: 1rem;
     padding: 1.5rem;
 }
   
 .right_section {
-    background-color: #85dcba;
+    background-color: #005C29;
     flex: 1 2 auto;
     margin: 1rem;
     align-items: center;
@@ -199,7 +101,7 @@ h3 {
 .footer {
     flex-shrink: 0;
     padding: 1rem;
-    background-color: #E27D60;
+    background-color: #005C29;
     color: white;
     font-size: 1.2rem;
     font-weight: 600;
@@ -255,7 +157,6 @@ form label {
       /* Rules in here will only apply when a screen is the correct size */
       /* check it out by using your developer tools to shrink your screen-size */
       .container {
-        background-color: #a5687c;
         flex-direction: column;
         justify-content: center;
         align-items: center;
