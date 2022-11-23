@@ -1,48 +1,41 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Group Project Base</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="wrapper">
-        <header class="header">
-            <h1 style="color:#005C29">Public Safety Tracker</h1>
-            <h3>Tracking Crime and Safety Across Prince George's County</h3>
-        </header>
-        <div class="container">
-
-            <div class="left_section box">
-                <h4>Top Left Viz</h4>
-            </div>
-
-            <div class="right_section box">
-                <h4>Bottom Left Viz</h4>
-            </div>  
-
-            <div class="right_section box">
-                <h4>Center PG County Map</h4>
-            </div>  
-
-            <div class="right_section box">
-                <h4>Top Right Crime Stat</h4>
-            </div>  
-
-            <div class="right_section box">
-                <h4>Center Crime Statistics</h4>
-            </div>  
-
-            <div class="right_section box">
-                <h4>Bottom Right Crime Statistics</h4>
-            </div>  
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Group 18 Final Project</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+    integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+    crossorigin=""/> 
+    <link rel="stylesheet" href="styles.css" />
+     <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+    integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
+    crossorigin=""></script> 
+  </head>
+  <body class="wrapper">
+      <header class="header">
+        <h1>Prince George's County Safety Tracker</h1>
+      </header>
+      <div class="container">
+        <div class="left_section box">
+            <h3>Search </h3>
+          <form action="/api" class="box main_form">
+            <label for="crime">Search by Crime Type</label>
+            <input type="text" name="crime" id="crime"/>
+            <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+            <button type="submit" id="get-crime">Submit</button>
+          </form>
         </div>
-        <footer class="footer" >Footer</footer>
+        <div class="right_section box">
+          <h3>Crime Incidents Across Prince George's</h3>
+          <div id="map"></div>
+          <div class="box" id="crime_incidents">List of Crimes</div>
+        </div>
+      </div>
+    <footer class="footer">
+    </footer>
     </div>
-
-<script src="./script.js"></script>
-
-</body>
+    <script src="./script.js"></script>
+  </body>
 </html>
