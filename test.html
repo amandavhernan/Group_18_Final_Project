@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="test.css">
+    <title>Test</title>
+</head>
+<body class="wrapper">
+
+    <nav class="nav-bar">
+        <div> <!-- logo -->
+            <a href="https://www.princegeorgescountymd.gov/">
+                <img src="pgco.png" alt="Prince George's County" width="150" height="100"></a>
+        </div>
+        <p>Prince George's County Safety Tracker</p>
+        <!-- nav bar items -->
+        <ul class="nav-list">
+            <li class="list-item">
+                <a href="test.html">Home</a>
+            </li>
+            <li class="list-item">
+                <a href="about.html">About</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="left_section box">
+            <h3>Search</h3>
+          <form action="/api" class="box main_form">
+            <label for="crime">Search by Crime Type</label>
+            <input type="text" name="crime" id="crime"/>
+            <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+            <button type="submit" id="get-crime">Submit</button>
+          </form>
+        </div>
+        <div class="right_section box">
+          <h3>Crime Incidents Across Prince George's</h3>
+          <div id="map"></div>
+          <div class="box" id="crime_incidents">List of Crimes</div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <a href="https://data.princegeorgescountymd.gov/Public-Safety/Crime-Incidents-February-2017-to-Present/wb4e-w4nf">
+            View and download the county's crime data</a>
+        <p>University of Maryland | INST377</p>
+        <p>Designed by Amanda Hernandez and Devika Govindarajan</p>
+    </footer>
+    
+</body>
+</html>
