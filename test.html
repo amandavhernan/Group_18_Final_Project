@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="test.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
     <title>Test</title>
 </head>
 <body class="wrapper">
@@ -14,7 +15,7 @@
             <a href="https://www.princegeorgescountymd.gov/">
                 <img src="pgco.png" alt="Prince George's County" width="150" height="100"></a>
         </div>
-        <p>Prince George's County Safety Tracker</p>
+        <p><b>Prince George's County Safety Tracker</b></p>
         <!-- nav bar items -->
         <ul class="nav-list">
             <li class="list-item">
@@ -27,25 +28,64 @@
     </nav>
 
     <div class="container">
-        <div class="left_section box">
-            <h3>Search</h3>
-          <form action="/api" class="box main_form">
-            <label for="crime">Search by Crime Type</label>
-            <input type="text" name="crime" id="crime"/>
-            <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
-            <button type="submit" id="get-crime">Submit</button>
-          </form>
+        <div class="row">
+            <div class="card-01">
+                <h3 class="title">Population</h3>
+                <p class="text">Approximately 932,661 people live in Prince George's County. There are 324,953 households and 217,930 families.</p>
+            </div>
+            <div class="card-01">
+                <h3 class="title">Demographics</h3>
+                <canvas id="myChart"></canvas>
+
+            </div>
+            <div class="card-01">
+                <h3 class="title">Crime Rate</h3>
+
+            </div>
         </div>
-        <div class="right_section box">
-          <h3>Crime Incidents Across Prince George's</h3>
-          <div id="map"></div>
-          <div class="box" id="crime_incidents">List of Crimes</div>
+        <div class="row">
+            <div class="card-02"></div>
+            <div class="card-02"></div>
+        </div>
+        <div class="row">
+            <div class="card-03"></div>
+            <div class="card-03"></div>
         </div>
     </div>
 
+<!-- visualizations w/ chart.js -->
+
+<script>
+    
+    var ctx = document.getElementById('myChart').getContext('2d');
+var chart = new Chart(ctx, {
+    // type of chart we want to create
+    type: 'pie',
+
+    // data
+    data: {
+        labels: ["White", "Black/African American", "American Indian/Alaskan Native", "Asian", "Native Hawaiian/Pacific Islander", "Other", "Two or More Races"],
+        datasets: [{
+            label: "Population by Race",
+            backgroundColor: ["#003f5c", "#374c80", "#7a5195", "#bc5090", "#ef5675", "#ff764a", "#ffa600"],
+            data: [17.42, 62.01, 0.58, 4.21, 0.07, 11.93, 3.78],
+        }]
+    },
+
+    // configuration options go here
+    options: {
+        responsive: true
+    }
+});
+
+</script>
+
     <footer class="footer">
-        <a href="https://data.princegeorgescountymd.gov/Public-Safety/Crime-Incidents-February-2017-to-Present/wb4e-w4nf">
-            View and download the county's crime data</a>
+        <p><b>Data Sources</b></p>
+        <br></br>
+        <a class="data-source" href="https://www.pgchealthzone.org/index.php?module=demographicdata&controller=index&action=index&topic1=County&topic2=Prince+George%27s#">Demographics</a>
+        <a class="data-source" href="https://data.princegeorgescountymd.gov/Public-Safety/Crime-Incidents-February-2017-to-Present/wb4e-w4nf">Crime</a>
+        <br></br>
         <p>University of Maryland | INST377</p>
         <p>Designed by Amanda Hernandez and Devika Govindarajan</p>
     </footer>
