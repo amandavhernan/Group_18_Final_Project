@@ -45,7 +45,7 @@ html {
 }
 
 .card-01 {
-  background-color: #0091D5;
+  background-color: #8daea8;
   position: relative;
   flex: 1;
   max-width: 400px;
@@ -56,7 +56,7 @@ html {
 }
 
 .card-02 {
-  background-color: #7E909A;
+  background-color: #5c8e86;
   position: relative;
   flex: 1;
   max-width: 610px;
@@ -67,7 +67,7 @@ html {
 }
 
 .card-03 {
-  background-color: #7E909A;
+  background-color: #5c8e86;
   position: relative;
   flex: 1;
   max-width: 610px;
@@ -150,7 +150,7 @@ html {
 /* footer */
 
 .footer {
-    background-color: #1C4E80;
+    background-color: #4c837a;
     color: white;
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -162,7 +162,7 @@ html {
 .data-source {
     color: white;
     text-decoration: none;
-    background: #EA6A47;
+    background: #294557;
     border-radius: 5px;
     padding: 5px;
 }
@@ -170,7 +170,7 @@ html {
 /* nav bar styling */
 
 .nav-bar {
-    background-color: #1C4E80;
+    background-color: #4c837a;
     color: white;
     display: flex;
     justify-content: space-around;
@@ -193,7 +193,7 @@ html {
 }
 
 .nav-bar a:hover {
-    color: #EA6A47;
+    color: #e1ddbf;
 }
 
 /* form styling */
