@@ -36,13 +36,19 @@
                         also features an interactive map and bar chart where you can explore raw crime incident data. 
                     </p>
                 <h3 class="title">Crime Rates</h3>
+                    <p class="text">The age-adjusted death rate due to homicide was 11.7 deaths per 100,000 people between 2018-2020. The violent
+                        crime rate in 2019 was 310.6 violent crime incidents per 100,000 people. According to PGC Health Zone, the violent crime rate includes
+                        the following offenses: murder and nonnegligent manslaughter, rape, robbery, and aggravated assault.
+                    </p>
             </div>
             <div class="card-01">
                 <h3 class="title">Population</h3>
                     <p class="text">Approximately 932,661 people live in Prince George's County. There are 324,953 households and 217,930 families. 
                     Prince George's County is one of the most diverse counties in Maryland. Rougly 197,444 people or 21.17% of the population identify as Hispanic or Latino.</p>
-                <h3 class="title">Income</h3>
-                    <p></p>
+                <h3 class="title">Economy</h3>
+                    <p class="text">The average household income in Prince George's is $120,696. The median household income in the county, on the other hand, is $93,662. Appoximately 12,164 families (5.58% of total families)
+                        live below the poverty line.</p>
+                    <p class="text">Income Inequality Index: 0.403 (0 = complete equality/every person receives the same income, 1 = complete inequality/one person has all the wealth)</p>
             </div>
             <div class="card-01">
                 <h3 class="title">Racial Demographics</h3>
@@ -56,9 +62,17 @@
         <div class="row">
             <div class="card-02">
                 <h3 class="title">Form</h3>
+                    <form action="/api" class="box">
+                        <label for="crime">Search by Crime Type</label>
+                        <input type="text" name="crime" id="crime"/>
+                        <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+                        <button type="submit" id="get-crime">Submit</button>
+                    </form>
             </div>
             <div class="card-02">
-                <h3 class="title">Map</h3>
+                <h3 class="title">Crime Incidents Across Prince George's</h3>
+                <div id="map"></div>
+                <div class="box" id="crime_incidents">List of Crimes</div>
             </div>
         </div>
         <div class="row">
@@ -71,7 +85,7 @@
         </div>
     </div>
 
-<!-- visualizations w/ chart.js -->
+<!-- racial breakdown pie chart -->
 
 <script>
     
@@ -111,6 +125,8 @@ var chart = new Chart(ctx, {
         <p>University of Maryland | INST377</p>
         <p>Designed by Amanda Hernandez and Devika Govindarajan</p>
     </footer>
-    
+
+<script src="./script.js"></script>
+
 </body>
 </html>
