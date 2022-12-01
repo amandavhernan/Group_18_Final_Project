@@ -1,3 +1,57 @@
+// racial breakdown pie chart
+
+var ctx = document.getElementById('racePie').getContext('2d');
+var chart = new Chart(ctx, {
+  // type of chart we want to create
+  type: 'pie',
+
+  // data
+  data: {
+      labels: ["White", "Black/African American", "American Indian/Alaskan Native", "Asian", "Native Hawaiian/Pacific Islander", "Other", "Two or More Races"],
+      datasets: [{
+          label: "Population by Race",
+          backgroundColor: ["#22585c", "#066d63", "#1d815b", "#4b9247", "#7fa02a", "#bca700", "#ffa600"],
+          data: [17.42, 62.01, 0.58, 4.21, 0.07, 11.93, 3.78],
+      }]
+  },
+
+  // configuration options go here
+  options: {
+      aspectRatio: 1,
+      responsive: true,
+      layout: {
+          padding: 10
+      }
+  }
+});
+
+var ctx = document.getElementById('crimeBar').getContext('2d');
+var chart = new Chart(ctx, {
+  // type of chart we want to create
+  type: 'bar',
+
+  // data
+  data: {
+      labels: ["1", "2", "3", "4", "5", "6", "7"],
+      datasets: [{
+          label: "Crime by Type",
+          backgroundColor: ["#22585c", "#066d63", "#1d815b", "#4b9247", "#7fa02a", "#bca700", "#ffa600"],
+          data: [7, 6, 5, 4, 3, 2, 1],
+      }]
+  },
+
+  // configuration options go here
+  options: {
+      aspectRatio: 1,
+      responsive: true,
+      layout: {
+          padding: 10
+      }
+  }
+});
+
+// map
+
 function getRandomIntInclusive(min, max) {
   const newMin = Math.ceil(min);
   const newMax = Math.floor(max);
@@ -19,7 +73,7 @@ function injectHTML(list) {
 }
 
 function addCrimeIncidents(list) {
-  const range = [...Array(25).keys()];
+  const range = [...Array(10).keys()];
   const newArray = range.map((item) => {
     const index = getRandomIntInclusive(0, list.length);
     return list[index];
@@ -45,6 +99,15 @@ function initMap() {
   return map;
 }
 
+var blackIcon = new L.Icon({
+  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-black.png',
+  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41]
+});
+
 function markerPlace(array, map) {
   map.eachLayer((layer) => {
 		if (layer instanceof L.Marker) {
@@ -53,10 +116,11 @@ function markerPlace(array, map) {
   array.forEach((item) => {
     const latitude = item.latitude;
     const longitude = item.longitude;
-    L.marker([latitude, longitude]).addTo(map);
+    L.marker([latitude, longitude], {icon: blackIcon}).addTo(map);
   });
 }
 
+// grabs api data from pg data portal
 async function getData() {
   const url = 'https://data.princegeorgescountymd.gov/resource/wb4e-w4nf.json';
   const data = await fetch(url);

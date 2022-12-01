@@ -1,225 +1,213 @@
-.lds-ellipsis {
-    display: inline-block;
-    position: relative;
-    width: 80px;
-    height: 80px;
-  }
-  .lds-ellipsis_hidden{
-    display: hidden;
-  }
-  .lds-ellipsis div {
-    position: absolute;
-    top: 33px;
-    width: 13px;
-    height: 13px;
-    border-radius: 50%;
-    background: #fff;
-    animation-timing-function: cubic-bezier(0, 1, 1, 0);
-  }
-  .lds-ellipsis div:nth-child(1) {
-    left: 8px;
-    animation: lds-ellipsis1 0.6s infinite;
-  }
-  .lds-ellipsis div:nth-child(2) {
-    left: 8px;
-    animation: lds-ellipsis2 0.6s infinite;
-  }
-  .lds-ellipsis div:nth-child(3) {
-    left: 32px;
-    animation: lds-ellipsis2 0.6s infinite;
-  }
-  .lds-ellipsis div:nth-child(4) {
-    left: 56px;
-    animation: lds-ellipsis3 0.6s infinite;
-  }
-  @keyframes lds-ellipsis1 {
-    0% {
-      transform: scale(0);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-  @keyframes lds-ellipsis3 {
-    0% {
-      transform: scale(1);
-    }
-    100% {
-      transform: scale(0);
-    }
-  }
-  @keyframes lds-ellipsis2 {
-    0% {
-      transform: translate(0, 0);
-    }
-    100% {
-      transform: translate(24px, 0);
-    }
-  }
+/* nav bar styling */
 
-  * {
-    box-sizing: border-box;
-  }
+.nav-bar {
+  background-color: #4c837a;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 20px;
+}
 
-#map {
-    display: block;
-    width: 400px;
-    height: 380px;
-    border: 2px dashed rgb(99, 99, 99);
-    margin-bottom: 1rem;
+.nav-list {
+  list-style-type: none;
+}
+
+.nav-list .list-item {
+  display: inline-block;
+  padding: 20px 10px;
+}
+
+.nav-bar a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-bar a:hover {
+  color: #e1ddbf;
+}
+
+/* main styling elements */
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif; 
 }
   
-  html {
-    background-color: whitesmoke;
-    font-size: 16px;
-    min-width: 300px;
-    overflow-x: hidden;
-    overflow-y: scroll;
+html {
+  background-color: #F1F1F1;
+  min-width: 300px;
+  overflow-x: hidden;
+  overflow-y: scroll;
   
-    /* these are specific to different browsers */
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-    -webkit-text-size-adjust: 100%;
-    -moz-text-size-adjust: 100%;
-    text-size-adjust: 100%;
-  }
+  /* these are specific to different browsers */
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
   
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: ‘Segoe UI’, Candara, ‘Bitstream Vera Sans’, ‘DejaVu Sans’, ‘Bitsream Vera Sans’, ‘Trebuchet MS’, Verdana, ‘Verdana Ref’, sans-serif;
-    font-weight: 400;
-    color: rgb(63, 77, 52);
-    line-height: 1.5;
-    background-color: whitesmoke;
-  }
+body {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  flex: 1;
+}
+
+.container {
+  margin: 20px;
+  overflow: hidden;
+}
+
+.box {
+  width: fit-content;
+  height:fit-content;
+  padding: 1.5rem;
+  margin: 0 auto;
+  color: black;
+  font-size: large;
+}
   
+/* locator map */
+
+#map {
+  display: block;
+  width: 400px;
+  height: 380px;
+  border: 3px solid #294557;
+  margin-bottom: .5rem;
+  margin-top: 1rem;
+}
+
+/* links + buttons */
+
+.data-source {
+  color: white;
+  text-decoration: none;
+  background: #294557;
+  border-radius: 5px;
+  padding: 6px;
+  margin-left: 10px;
+}
+
+.data-source:hover {
+  background-color: #e1ddbf;
+  color: black;
+  transition:0.10s;
+}
+
+.button {
+  background-color: #294557;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+.button:hover {
+  background-color: #e1ddbf;
+  color: black;
+  transition:0.10s;
+}
+
+/* text styling */
+
+.title {
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.subtitle {
+  padding-bottom: 10px;
+  padding-left: 10px;
+  font-weight: bold;
+}
+
+.text {
+  padding: 10px;
+  text-align: center;
+  font-size: large;
+}
+
+.footer-text {
+  margin-left: 10px;
+}
+
+.crime-types {
+  text-align: center;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 3px solid #294557;
+  text-align: center;
+  padding: 4.5px;
+}
+
+/* flex boxes */
+
+.row {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card-01 {
+  background-color: #8daea8;
+  display: inline-block;
+  position: relative;
+  flex: 1;
+  height: 100%;
+  width: 100%;
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.card-02 {
+  background-color: #5c8e86;
+  position: relative;
+  flex: 1;
+  height: 100%;
+  width: 100%;
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
   
-  a {
-    display: inline-block;
-    text-decoration: none;
-  }
+/* footer */
+
+.footer {
+  background-color: #4c837a;
+  color: white;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-size: large;
+}
   
-  h2, h3 {
-    margin:0;
-    padding:0;
-    padding-bottom:1.5rem;
-  }
-  
-  form {
-    accent-color: hsla(120, 100%, 50%, 0.482);
-  }
-  
-  .wrapper {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-    flex: 1;
-    background-color: whitesmoke;
-  }
-  
-  .container {
-    margin: 0 20px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: start;
-    flex:1;
-    background-color: whitesmoke;
-  }
-  
-  .header {
-    padding-top: 1rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    padding-bottom: 1.5rem;
-  }
-  
-  .header h1 {
-    display: block;
-    /* this will push other blocks out of the way */
-  
-    /* colors */
-    background-color: #003C5E;
-    color: white;
-  
-    /* shapes */
-    border-radius: 25px;
-    font-size: 1.5rem;
-    padding: 1.25rem;
-    margin:0; /* removing the margin on h1 tags means the header pins to the top if we move */
-  
-    /* box-shadows are fancy */
-    box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);
-  }
-  
-  .box {
-    width: fit-content;
-    height:fit-content;
-    padding: 1.5rem;
-    margin: 0 auto;
-    color: black;
-  }
-  
-  .left_section {
-    background-color: #acacac;
-    flex: 0 1 auto;
-    margin: 1rem;
-    padding: 1.5rem;
-    border-radius: 25px;
-  }
-  
-  .right_section {
-    background-color: #acacac;
-    flex: 1 2 auto;
-    margin: 1rem;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-    border-radius: 25px;
-  }
-  
-  /*
-    This block is actually dependent on the "container" block having a flex set on it
-    and the "wrapper" block displaying as a flex column with a "vertical height" (vh) of 100.
-    That serves to cram the footer to the bottom of the page.
-  */
-  
-  .footer {
-    flex-shrink: 0;
-    padding: 1rem;
-    background-color: #36194B;
-    font-size: 1.2rem;
-  }
-  
-  .footer a {
-    text-decoration: underline;
-  }
-  
-  /*
-    This is an example of a 'pseudoclass'
-    In this instance, it says what to do if a mouse hovers over a link
-    This is pretty desktop-specific, since there's no hover function on touchscreens
-  */
-  .footer a:hover {
-    /* Hue, saturation, luminosity, alpha */
-    background-color: hsla(0, 0%, 90%, 0.15);
-    /* red, green, blue, alpha */
-    color: rgb(246, 169, 93);
-    text-decoration: none;
-  }
-  
-  .subtitle {
-    color: rgba(0, 0, 0, 0.8);
-    margin: 0px;
-    margin-bottom: 5px;
-  }
-  
-  /*
-  Form Styles
-  */
+/* form styling */
   
   form input {
       /* This is a hack to make sure our boxes line up with one another nicely */
@@ -245,31 +233,73 @@
     margin-bottom: 0.5rem;
   }
 
-  .button {
-    background-color: #00FF00; box-shadow: rgba(78, 197, 31, 0.25) 0px 2px 5px -1px,rgba(44, 163, 7, 0.3) 0px 1px 3px -1px;
-    border: none;
-    border-radius: 4px;
-    color: white;
-    font-weight: bold;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
+/* animation */
+
+.lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ellipsis_hidden{
+  display: hidden;
+}
+.lds-ellipsis div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #fff;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
   }
-  .button:hover {
-    background-color: #00FF00;
-    transition:0.10s;
+  100% {
+    transform: scale(1);
   }
-  /* media Query for small screens */
-  
-  @media only screen and (max-width: 736px){
-      /* Rules in here will only apply when a screen is the correct size */
-      /* check it out by using your developer tools to shrink your screen-size */
-      .container {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
   }
- 
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}
+
+/* media query */
+
+@media only screen and (max-width: 736px){
+  .container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
