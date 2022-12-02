@@ -49,7 +49,7 @@ var chart = new Chart(ctx, {
   }
 });
 
-function initChart(chart, object) {
+/* function initChart(chart, object) {
   const labels = Object.keys(object);
   const info = Object.keys(object).map((item) => object[item].length);
 
@@ -91,7 +91,7 @@ function changeChart(chart, dataObject) {
   });
   chart.update();
 }
-
+*/
 
 // map
 
