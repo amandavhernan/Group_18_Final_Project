@@ -30,6 +30,25 @@ var chart = new Chart(ctx, {
   // type of chart we want to create
   type: 'bar',
 
+  // data
+  data: {
+    labels: ["1", "2", "3", "4", "5", "6", "7"],
+    datasets: [{
+        label: "Crime by Type",
+        backgroundColor: ["#22585c", "#066d63", "#1d815b", "#4b9247", "#7fa02a", "#bca700", "#ffa600"],
+        data: [7, 6, 5, 4, 3, 2, 1],
+    }]
+},
+
+  options: {
+   aspectRatio: 1,
+    responsive: true,
+    layout: {
+     padding: 10
+    }
+  }
+});
+
 function initChart(chart, object) {
   const labels = Object.keys(object);
   const info = Object.keys(object).map((item) => object[item].length);
@@ -73,26 +92,6 @@ function changeChart(chart, dataObject) {
   chart.update();
 }
 
-
-  // data
-  data: {
-      labels: ["1", "2", "3", "4", "5", "6", "7"],
-      datasets: [{
-          label: "Crime by Type",
-          backgroundColor: ["#22585c", "#066d63", "#1d815b", "#4b9247", "#7fa02a", "#bca700", "#ffa600"],
-          data: [7, 6, 5, 4, 3, 2, 1],
-      }]
-  },
-
-  // configuration options go here
-  options: {
-      aspectRatio: 1,
-      responsive: true,
-      layout: {
-          padding: 10
-      }
-  }
-});
 
 // map
 
