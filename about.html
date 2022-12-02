@@ -9,41 +9,48 @@
 </head>
 <body class="wrapper">
 
-    <nav class="nav-bar">
-        <div> <!-- logo -->
-            <a href="https://www.princegeorgescountymd.gov/">
-                <img src="pgco.png" alt="Prince George's County" width="150" height="100"></a>
-        </div>
-        <p>Prince George's County Safety Tracker</p>
-        <!-- nav bar items -->
-        <ul class="nav-list">
-            <li class="list-item">
-                <a href="index.html">Home</a>
-            </li>
-            <li class="list-item">
-                <a href="about.html">About</a>
-            </li>
-        </ul>
-    </nav>
+<!-- nav bar-->
+<nav class="nav-bar">
+    <div> <!-- logo -->
+        <a href="https://www.princegeorgescountymd.gov/">
+            <img src="pgco.png" alt="Prince George's County logo." width="150" height="100"></a>
+    </div>
+    <h2>Prince George's County Safety Tracker</h2>
+    <!-- nav bar items -->
+    <ul class="nav-list">
+        <li class="list-item">
+            <a href="index.html">Home</a>
+        </li>
+        <li class="list-item">
+            <a href="about.html">About</a>
+        </li>
+    </ul>
+</nav>
 
     <div class="container">
-        <div class="left_section box">
-            <h3>About the Project</h3>
-            <br></br>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at libero urna. Integer accumsan diam nec purus rhoncus interdum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer ut dui quis ex congue volutpat at sed magna. Sed tincidunt finibus risus, non dignissim felis pretium non. Nullam viverra placerat rhoncus. Morbi vitae placerat sapien, at tincidunt lectus. Maecenas consequat libero id erat interdum hendrerit vel at libero. Nulla gravida eu eros ac pulvinar. In hac habitasse platea dictumst. Curabitur eu tristique mi, nec interdum nulla. Donec scelerisque a eros non gravida. Pellentesque pretium, risus ut porttitor tempor, elit augue sollicitudin dolor, et lacinia odio odio sit amet elit. 
-                    Nullam luctus purus a luctus dictum. Etiam orci sem, auctor id lacus in, maximus pharetra nibh. In at mi nulla. Curabitur mauris tellus, imperdiet sit amet risus sed, viverra eleifend ipsum. Praesent vel urna at dui consectetur consequat nec ac lacus. 
-                    Proin non risus metus. Maecenas sed porta metus. Morbi sed mollis felis. Donec tincidunt, quam eget consectetur dictum, felis mi feugiat metus, non mollis turpis enim eu enim. Nullam cursus pulvinar malesuada. Sed at placerat elit. Nam tincidunt metus dui, sit amet rhoncus erat dictum eget. Sed nec ultricies nisl. Maecenas non turpis porta, efficitur turpis eu, dapibus neque. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam neque odio, interdum id nibh eget, pharetra varius elit. Aenean sit amet maximus arcu, ac rhoncus diam. Praesent id bibendum quam. Morbi fermentum ornare odio, ac pellentesque ex dictum posuere. Vivamus dictum tellus augue, accumsan imperdiet neque semper sit amet. Nunc ultricies pulvinar ligula quis pharetra.</p>
+        <div>
+            <h3 class="title">About the Project</h3>
+                <p class="text">This student-built safety tracker is a product of the INST377 curriculum at the University of Maryland.
+                    The idea behind the project came from an understanding that some police departments are notorius for releasing
+                    skewed or misleading crime statistics. This is an information problem that affects many communities across the United States. 
+                    This is an issue because crime data may contain inconsistencies that make it easy to misinterpret and spin facts or data in a 
+                    way that elevates political agendas instead of community-based solutions. Additionally, biased crime data can lead to the spread 
+                    of harmful stereotypes about certain areas or communities and the people who live there.</p>
+                <p class="text">To make this project into a reality, we used a publicly available API from the Prince George's County data portal to 
+                    extract data from the county's live crime incident dataset. The dataset spans roughly five years from 2017 to 2022 (present). It's 
+                    also important to note that the data used to build this dashboard does not represent every call for service handled by the Prince 
+                    George's County Police Department. Using HTML, CSS, and JavaScript, we built this website to house our 
+                    safety tracker. Click on "home" in the header to explore the data.</p>      
         </div>
     </div>
 
     <footer class="footer">
-        <p><b>Data Sources</b></p>
-        <br></br>
+        <p class="subtitle">Data Sources</p>
         <a class="data-source" href="https://www.pgchealthzone.org/index.php?module=demographicdata&controller=index&action=index&topic1=County&topic2=Prince+George%27s#">Demographics</a>
         <a class="data-source" href="https://data.princegeorgescountymd.gov/Public-Safety/Crime-Incidents-February-2017-to-Present/wb4e-w4nf">Crime</a>
         <br></br>
-        <p>University of Maryland | INST377</p>
-        <p>Designed by Amanda Hernandez and Devika Govindarajan</p>
+        <p class="footer-text">University of Maryland | INST377</p>
+        <p class="footer-text">Designed by Amanda Hernandez and Devika Govindarajan</p>
     </footer>
     
 </body>
