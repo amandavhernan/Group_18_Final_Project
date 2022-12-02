@@ -30,6 +30,50 @@ var chart = new Chart(ctx, {
   // type of chart we want to create
   type: 'bar',
 
+function initChart(chart, object) {
+  const labels = Object.keys(object);
+  const info = Object.keys(object).map((item) => object[item].length);
+
+  const data = {
+    labels: labels
+      datasets: [{
+          label: "Crime by Type",
+          backgroundColor: ["#22585c", "#066d63", "#1d815b", "#4b9247", "#7fa02a", "#bca700", "#ffa600"],
+          data: info
+      }]
+  };
+
+  const config = {
+    type: 'bar',
+    data: data
+    options: {
+      aspectRatio: 1,
+      responsive: true,
+      layout: {
+          padding: 10
+      },
+    }
+  },
+
+  return new Chart(
+    chart,
+    config
+  ),
+}
+
+function changeChart(chart, dataObject) {
+  const labels = Object.keys(dataObject);
+  const info = Object.keys(dataObject).map((item) => dataObject[item].length);
+
+  chart.data.labels = labels;
+  chart.data.datasets.forEach((set) => {
+    set.data = info;
+    return set;
+  });
+  chart.update();
+}
+
+
   // data
   data: {
       labels: ["1", "2", "3", "4", "5", "6", "7"],
