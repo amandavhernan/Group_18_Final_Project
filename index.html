@@ -24,7 +24,7 @@
             <a href="https://www.princegeorgescountymd.gov/">
                 <img src="pgco.png" alt="Prince George's County logo." width="150" height="100"></a>
         </div>
-        <p><b>Prince George's County Safety Tracker</b></p>
+        <h2>Prince George's County Safety Tracker</h2>
         <!-- nav bar items -->
         <ul class="nav-list">
             <li class="list-item">
@@ -72,7 +72,9 @@
           <div class="card-02">
               <h3 class="title">Explore Crime Incidents by Type</h3>
 
-              <p class="text">Instructions</p>
+              <p class="text">Use the submit button below to load a random selection of
+                10 crime incidents on the map on the right. Then, use the table to filter the incidents by type of crime.
+              </p>
 
               <form action="/api" class="box main_form">
                 <label for="crime">Filter by Crime Type</label>
@@ -81,37 +83,41 @@
                 <button class="button" type="submit" id="get-crime">Submit</button>
               </form>
               <br>
-              <p class="title">Filterable Crime Types</p>
+              <h3 class="title">Filterable Crime Types</h3>
               
-              <table>
-                <tr>
-                  <th>Violent</th>
-                  <th>Non-violent</th>
-                </tr>
-                <tr>
-                  <td>Assault</td>
-                  <td>Accident</td>
-                </tr>
-                <tr>
-                  <td>Assault with weapon</td>
-                  <td>Accident with impound</td>
-                </tr>
-                <tr>
-                  <td>Assault, shooting</td>
-                  <td>Theft or theft from auto</td>
-                </tr>
-                <tr>
-                  <td>Robbery (residential, commerical, vehicle, other)</td>
-                  <td>Auto, stolen or auto, stolen and recovered</td>
-                </tr>
-                <tr>
-                  <td>Homicide</td>
-                  <td>Breaking and entering (residential, commericial, vacant, school)</td>
-                </tr>
-                <tr>
-                  <td>Sex offense</td>
-                  <td>Vandalism</td>
-                </tr>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Violent</th>
+                    <th>Non-violent</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Assault</td>
+                    <td>Accident</td>
+                  </tr>
+                  <tr>
+                    <td>Assault with weapon</td>
+                    <td>Accident with impound</td>
+                  </tr>
+                  <tr>
+                    <td>Assault, shooting</td>
+                    <td>Theft or theft from auto</td>
+                  </tr>
+                  <tr>
+                    <td>Robbery (residential, commerical, vehicle, other)</td>
+                    <td>Auto, stolen or auto, stolen and recovered</td>
+                  </tr>
+                  <tr>
+                    <td>Homicide</td>
+                    <td>Breaking and entering (residential, commericial, vacant, school)</td>
+                  </tr>
+                  <tr>
+                    <td>Sex offense</td>
+                    <td>Vandalism</td>
+                  </tr>
+              </tbody>
               </table>
 
           </div>
@@ -125,7 +131,6 @@
           <div class="card-02">
               <h3 class="title">Bar</h3>
               <canvas id="crimeBar"></canvas>
-
           </div>
           <div class="card-02">
               <h3 class="title">Form</h3>

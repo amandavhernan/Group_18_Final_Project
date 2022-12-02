@@ -1,5 +1,8 @@
 // racial breakdown pie chart
 
+Chart.defaults.global.defaultFontFamily='"Gill Sans",sans-serif';
+Chart.defaults.global.defaultFontColor="#000";
+Chart.defaults.global.defaultFontSize = 14;
 var ctx = document.getElementById('racePie').getContext('2d');
 var chart = new Chart(ctx, {
   // type of chart we want to create
@@ -21,9 +24,16 @@ var chart = new Chart(ctx, {
       responsive: true,
       layout: {
           padding: 10
+      },
+      title: {
+        display: true,
+        text: 'Population by Race (%)',
+        fontSize: 16
       }
   }
 });
+
+// crime type bar chart
 
 var ctx = document.getElementById('crimeBar').getContext('2d');
 var chart = new Chart(ctx, {
@@ -34,8 +44,8 @@ var chart = new Chart(ctx, {
   data: {
     labels: ["1", "2", "3", "4", "5", "6", "7"],
     datasets: [{
-        label: "Crime by Type",
-        backgroundColor: ["#22585c", "#066d63", "#1d815b", "#4b9247", "#7fa02a", "#bca700", "#ffa600"],
+        label: "Types of Crimes",
+        backgroundColor: "#066d63",
         data: [7, 6, 5, 4, 3, 2, 1],
     }]
 },
@@ -45,7 +55,20 @@ var chart = new Chart(ctx, {
     responsive: true,
     layout: {
      padding: 10
+    },
+    title: {
+      display: true,
+      text: 'Crime Incidents Sorted by Frequency',
+      fontSize: 16
+    },
+    scales: {
+      yAxes: [{
+        ticks: {
+          beginAtZero: true
+        }
+      }]
     }
+
   }
 });
 
