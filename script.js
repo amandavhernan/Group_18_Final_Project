@@ -3,6 +3,7 @@
 Chart.defaults.global.defaultFontFamily='"Gill Sans",sans-serif';
 Chart.defaults.global.defaultFontColor="#000";
 Chart.defaults.global.defaultFontSize = 14;
+
 var ctx = document.getElementById('racePie').getContext('2d');
 var chart = new Chart(ctx, {
   // type of chart we want to create
@@ -116,7 +117,7 @@ function changeChart(chart, dataObject) {
 }
 */
 
-// map
+// map processing
 
 function getRandomIntInclusive(min, max) {
   const newMin = Math.ceil(min);
@@ -129,7 +130,7 @@ function injectHTML(list) {
   const target = document.querySelector('#crime_incidents');
   target.innerHTML = '';
 
-  const listEl = document.createElement('ol');
+  const listEl = document.createElement('ul');
   target.appendChild(listEl);
   list.forEach((item) => {
     const el = document.createElement('li');
@@ -165,6 +166,7 @@ function initMap() {
   return map;
 }
 
+//  custom map marker
 var blackIcon = new L.Icon({
   iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-black.png',
   shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
@@ -174,6 +176,7 @@ var blackIcon = new L.Icon({
   shadowSize: [41, 41]
 });
 
+// map marker placement
 function markerPlace(array, map) {
   map.eachLayer((layer) => {
 		if (layer instanceof L.Marker) {
@@ -197,28 +200,25 @@ async function getData() {
 
 async function mainEvent() {
   // the async keyword means we can make API requests
-  const form = document.querySelector('.main_form'); // get your main form so you can do JS with it
-  const submit = document.querySelector('#get-crime'); // get a reference to your submit button
+  const form = document.querySelector('.main_form'); // main form
+  const submit = document.querySelector('#get-crime'); // reference to your submit button
   const loadAnimation = document.querySelector('.lds-ellipsis');
-  submit.style.display = 'none'; // let your submit button disappear
+  submit.style.display = 'none'; // submit button disappears
 
-  // initChart(chartTarget);
   const pageMap = initMap();
-  /* API data request */
+  /* api data request */
   const mapData = await getData();
 
   console.table(mapData);
 
-  // in your browser console, try expanding this object to see what fields are available to work with
-  // for example: arrayFromJson.data[0].name, etc
   console.log(mapData[0]);
 
   // this is called "string interpolation" and is how we build large text blocks with variables
   console.log(`${mapData[0].clearance_code_inc_type} ${mapData[0].street_address}`);
 
-  // This IF statement ensures we can't do anything if we don't have information yet
-  if (mapData.length > 0) { // the question mark in this means "if this is set at all"
-    submit.style.display = 'block'; // let's turn the submit button back on by setting it to display as a block when we have data available
+  // this if statement ensures we can't do anything if we don't have information yet
+  if (mapData.length > 0) { 
+    submit.style.display = 'block'; 
 
     loadAnimation.classList.remove('lds-ellipsis');
     loadAnimation.classList.add('lds-ellipsis_hidden');
@@ -232,13 +232,8 @@ async function mainEvent() {
     });
 
     form.addEventListener('submit', (submitEvent) => {
-      // This is needed to stop our page from changing to a new URL even though it heard a GET request
       submitEvent.preventDefault();
-
-      // This constant will have the value of your 15-restaurant collection when it processes
       currentList = addCrimeIncidents(mapData);
-
-      // And this function call will perform the "side effect" of injecting the HTML list for you
       injectHTML(currentList);
       markerPlace(currentList, pageMap);
     });
