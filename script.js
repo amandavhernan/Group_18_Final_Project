@@ -1,7 +1,7 @@
 // racial breakdown pie chart
 
-Chart.defaults.global.defaultFontFamily='"Gill Sans",sans-serif';
-Chart.defaults.global.defaultFontColor="#000";
+Chart.defaults.global.defaultFontFamily = '"Gill Sans",sans-serif';
+Chart.defaults.global.defaultFontColor = '#000';
 Chart.defaults.global.defaultFontSize = 14;
 
 var ctx = document.getElementById('racePie').getContext('2d');
@@ -11,51 +11,51 @@ var chart = new Chart(ctx, {
 
   // data
   data: {
-      labels: ["White", "Black/African American", "American Indian/Alaskan Native", "Asian", "Native Hawaiian/Pacific Islander", "Other", "Two or More Races"],
-      datasets: [{
-          label: "Population by Race",
-          backgroundColor: ["#22585c", "#066d63", "#1d815b", "#4b9247", "#7fa02a", "#bca700", "#ffa600"],
-          data: [17.42, 62.01, 0.58, 4.21, 0.07, 11.93, 3.78],
-      }]
+    labels: ['White', 'Black/African American', 'American Indian/Alaskan Native', 'Asian', 'Native Hawaiian/Pacific Islander', 'Other', 'Two or More Races'],
+    datasets: [{
+      label: 'Population by Race',
+      backgroundColor: ['#22585c', '#066d63', '#1d815b', '#4b9247', '#7fa02a', '#bca700', '#ffa600'],
+      data: [17.42, 62.01, 0.58, 4.21, 0.07, 11.93, 3.78]
+    }]
   },
 
   // configuration options go here
   options: {
-      aspectRatio: 1,
-      responsive: true,
-      layout: {
-          padding: 10
-      },
-      title: {
-        display: true,
-        text: 'Population by Race (%)',
-        fontSize: 16
-      }
+    aspectRatio: 1,
+    responsive: true,
+    layout: {
+      padding: 10
+    },
+    title: {
+      display: true,
+      text: 'Population by Race (%)',
+      fontSize: 16
+    }
   }
 });
 
 // crime type bar chart
 
-var ctx = document.getElementById('crimeBar').getContext('2d');
+/* var ctx = document.getElementById('crimeBar').getContext('2d');
 var chart = new Chart(ctx, {
   // type of chart we want to create
   type: 'bar',
 
   // data
   data: {
-    labels: ["1", "2", "3", "4", "5", "6", "7"],
+    labels: ['1', '2', '3', '4', '5', '6', '7'],
     datasets: [{
-        label: "Types of Crimes",
-        backgroundColor: "#066d63",
-        data: [7, 6, 5, 4, 3, 2, 1],
+      label: 'Types of Crimes',
+      backgroundColor: '#066d63',
+      data: [7, 6, 5, 4, 3, 2, 1]
     }]
-},
+  },
 
   options: {
-   aspectRatio: 1,
+    aspectRatio: 1,
     responsive: true,
     layout: {
-     padding: 10
+      padding: 10
     },
     title: {
       display: true,
@@ -71,9 +71,19 @@ var chart = new Chart(ctx, {
     }
 
   }
-});
+}); */
 
-/* function initChart(chart, object) {
+function processCrimes(list) {
+  console.log('fired crime list');
+  const range = [...Array(15).keys()];
+  const newaray = range.map((item) => {
+    const index = getRandomInclusive(0, list.length);
+      return list[index];
+  });
+  return newArray;
+} 
+
+/*function initChart(chart, object) {
   const labels = Object.keys(object);
   const info = Object.keys(object).map((item) => object[item].length);
 
@@ -88,23 +98,17 @@ var chart = new Chart(ctx, {
 
   const config = {
     type: 'bar',
-    data: data
-    options: {
-      aspectRatio: 1,
-      responsive: true,
-      layout: {
-          padding: 10
-      },
-    }
-  },
+    data: data,
+    options: {}
+  };
 
   return new Chart(
     chart,
     config
-  ),
+  );
 }
-
-function changeChart(chart, dataObject) {
+*/
+/* function changeChart(chart, dataObject) {
   const labels = Object.keys(dataObject);
   const info = Object.keys(dataObject).map((item) => dataObject[item].length);
 
@@ -114,8 +118,19 @@ function changeChart(chart, dataObject) {
     return set;
   });
   chart.update();
-}
-*/
+} */
+
+/*function shapeDataForLineChart(array) {
+  return array.reduce((collection, item) => {
+    if(!collection[item.clearance_code_inc_type]) {
+      collection[item.clearance_code_inc_type] = [item];
+    } else {
+      collection[item.clearance_code_inc_type].push(item);
+    }
+    return collection;
+  }, {});
+} */
+
 
 // map processing
 
@@ -167,7 +182,7 @@ function initMap() {
 }
 
 //  custom map marker
-var blackIcon = new L.Icon({
+const blackIcon = new L.Icon({
   iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-black.png',
   shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
   iconSize: [25, 41],
@@ -179,12 +194,13 @@ var blackIcon = new L.Icon({
 // map marker placement
 function markerPlace(array, map) {
   map.eachLayer((layer) => {
-		if (layer instanceof L.Marker) {
+    if (layer instanceof L.Marker) {
 		  layer.remove();
-		}});
+    }
+  });
   array.forEach((item) => {
-    const latitude = item.latitude;
-    const longitude = item.longitude;
+    const {latitude} = item;
+    const {longitude} = item;
     L.marker([latitude, longitude], {icon: blackIcon}).addTo(map);
   });
 }
@@ -203,11 +219,16 @@ async function mainEvent() {
   const form = document.querySelector('.main_form'); // main form
   const submit = document.querySelector('#get-crime'); // reference to your submit button
   const loadAnimation = document.querySelector('.lds-ellipsis');
+  //const chartTarget = document.querySelector('crimeBar');
   submit.style.display = 'none'; // submit button disappears
 
   const pageMap = initMap();
   /* api data request */
   const mapData = await getData();
+  //const shapedBarData = shapeDataForLineChart(mapData);
+  //const barChart = initChart(chartTarget, shapedBarData); 
+
+  if(!mapData?.length > 0) { return; }
 
   console.table(mapData);
 
@@ -217,8 +238,8 @@ async function mainEvent() {
   console.log(`${mapData[0].clearance_code_inc_type} ${mapData[0].street_address}`);
 
   // this if statement ensures we can't do anything if we don't have information yet
-  if (mapData.length > 0) { 
-    submit.style.display = 'block'; 
+  if (mapData.length > 0) {
+    submit.style.display = 'block';
 
     loadAnimation.classList.remove('lds-ellipsis');
     loadAnimation.classList.add('lds-ellipsis_hidden');
@@ -228,13 +249,19 @@ async function mainEvent() {
       console.log(event.target.value);
       const newFilterList = filterList(currentList, event.target.value);
       injectHTML(newFilterList);
+      //const localData = shapeDataForLineChart(filterList(currentList, event.target.value));
+      //changeChart(barChart, localData);
       markerPlace(newFilterList, pageMap);
     });
 
     form.addEventListener('submit', (submitEvent) => {
       submitEvent.preventDefault();
       currentList = addCrimeIncidents(mapData);
+      //secondList = processCrimes(mapData)
       injectHTML(currentList);
+      //injectHTML(secondList);
+      //const localData = shapeDataForLineChart(secondList);
+      //changeChart(barChart, localData);
       markerPlace(currentList, pageMap);
     });
   }
