@@ -14,7 +14,7 @@ var chart = new Chart(ctx, {
       labels: ["White", "Black/African American", "American Indian/Alaskan Native", "Asian", "Native Hawaiian/Pacific Islander", "Other", "Two or More Races"],
       datasets: [{
           label: "Population by Race",
-          backgroundColor: ["#22585c", "#066d63", "#1d815b", "#4b9247", "#7fa02a", "#bca700", "#ffa600"],
+          backgroundColor: ["#294557", "#005a6d", "#007074", "#00846b", "#289652", "#70a32f", "#ffa600"],
           data: [17.42, 62.01, 0.58, 4.21, 0.07, 11.93, 3.78],
       }]
   },
@@ -36,42 +36,7 @@ var chart = new Chart(ctx, {
 
 // crime type bar chart
 
-var ctx = document.getElementById('crimeBar').getContext('2d');
-var chart = new Chart(ctx, {
-  // type of chart we want to create
-  type: 'bar',
 
-  // data
-  data: {
-    labels: ["1", "2", "3", "4", "5", "6", "7"],
-    datasets: [{
-        label: "Types of Crimes",
-        backgroundColor: "#066d63",
-        data: [7, 6, 5, 4, 3, 2, 1],
-    }]
-},
-
-  options: {
-   aspectRatio: 1,
-    responsive: true,
-    layout: {
-     padding: 10
-    },
-    title: {
-      display: true,
-      text: 'Crime Incidents Sorted by Frequency',
-      fontSize: 16
-    },
-    scales: {
-      yAxes: [{
-        ticks: {
-          beginAtZero: true
-        }
-      }]
-    }
-
-  }
-});
 
 /* function initChart(chart, object) {
   const labels = Object.keys(object);
@@ -119,18 +84,12 @@ function changeChart(chart, dataObject) {
 
 // map processing
 
-function getRandomIntInclusive(min, max) {
-  const newMin = Math.ceil(min);
-  const newMax = Math.floor(max);
-  return Math.floor(Math.random() * (newMax - newMin + 1) + newMin);
-}
-
 function injectHTML(list) {
   console.log('fired injectHTML');
   const target = document.querySelector('#crime_incidents');
   target.innerHTML = '';
 
-  const listEl = document.createElement('ul');
+  const listEl = document.createElement('ol');
   target.appendChild(listEl);
   list.forEach((item) => {
     const el = document.createElement('li');
@@ -140,40 +99,129 @@ function injectHTML(list) {
 }
 
 function addCrimeIncidents(list) {
-  const range = [...Array(10).keys()];
-  const newArray = range.map((item) => {
-    const index = getRandomIntInclusive(0, list.length);
-    return list[index];
-  });
-  return newArray;
-}
+    const newArray = list.filter((item) => {
+      const crimeType = item.clearance_code_inc_type;
+        console.log(crimeType);
+        return crimeType;
+    });
+    return newArray;
+  }
 
-function filterList(array, filterInputValue) {
-  return array.filter((item) => {
-    const lowerCaseName = item.clearance_code_inc_type.toLowerCase();
-    const lowerCaseQuery = filterInputValue.toLowerCase();
-    return lowerCaseName.includes(lowerCaseQuery);
-  });
-}
+  function filterList(array, filterInputValue) {
+    return array.filter((item) => {
+      const lowerCaseName = item.clearance_code_inc_type.toLowerCase();
+      const lowerCaseQuery = filterInputValue.toLowerCase();
+      return lowerCaseName.includes(lowerCaseQuery);
+    });
+  }
 
 function initMap() {
   console.log('initMap');
-  const map = L.map('map').setView([38.9897, -76.9378], 11);
+  const map = L.map('map').setView([38.8780, -76.8317], 9);
   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
+    maxZoom: 20,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
   }).addTo(map);
   return map;
 }
 
-//  custom map marker
-var blackIcon = new L.Icon({
-  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-black.png',
-  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34],
-  shadowSize: [41, 41]
+//  custom map marker #1
+// https://github.com/pointhi/leaflet-color-markers
+const blackMarker = new L.Icon({
+    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-black.png',
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+});
+
+//  custom map markers
+// https://apidocs.geoapify.com/samples/markers/leaflet-custom-marker/
+
+// #294557 = assault
+const policeMarker1 = L.icon({
+    iconUrl: 'https://api.geoapify.com/v1/icon/?type=material&color=%23294557&icon=local_police&noWhiteCircle&scaleFactor=2&apiKey=a16effabd94548a18edff66a4b5d7265',
+    iconSize: [25, 41], // size of the icon
+    iconAnchor: [12, 41], // point of the icon which will correspond to marker's location
+    popupAnchor: [1, -34] // point from which the popup should open relative to the iconAnchor
+  });
+// #005a6d = assault w/ weapon
+const policeMarker2 = L.icon({
+    iconUrl: 'https://api.geoapify.com/v1/icon/?type=material&color=%23005a6d&icon=local_police&noWhiteCircle&scaleFactor=2&apiKey=a16effabd94548a18edff66a4b5d7265',
+    iconSize: [25, 41], // size of the icon
+    iconAnchor: [12, 41], // point of the icon which will correspond to marker's location
+    popupAnchor: [1, -34] // point from which the popup should open relative to the iconAnchor
+  });
+// #007074 = assault, shooting
+const policeMarker3 = L.icon({
+  iconUrl: 'https://api.geoapify.com/v1/icon/?type=material&color=%23007074&icon=local_police&noWhiteCircle&scaleFactor=2&apiKey=a16effabd94548a18edff66a4b5d7265',
+  iconSize: [25, 41], // size of the icon
+  iconAnchor: [12, 41], // point of the icon which will correspond to marker's location
+  popupAnchor: [1, -34] // point from which the popup should open relative to the iconAnchor
+});
+// #00846b = robbery (residential, commerical, vehicle, other)
+const policeMarker4 = L.icon({
+  iconUrl: 'https://api.geoapify.com/v1/icon/?type=material&color=%2300846b&icon=local_police&noWhiteCircle&scaleFactor=2&apiKey=a16effabd94548a18edff66a4b5d7265',
+  iconSize: [25, 41], // size of the icon
+  iconAnchor: [12, 41], // point of the icon which will correspond to marker's location
+  popupAnchor: [1, -34] // point from which the popup should open relative to the iconAnchor
+});
+// #289652 = homicide
+const policeMarker5 = L.icon({
+  iconUrl: 'https://api.geoapify.com/v1/icon/?type=material&color=%23289652&icon=local_police&noWhiteCircle&scaleFactor=2&apiKey=a16effabd94548a18edff66a4b5d7265',
+  iconSize: [25, 41], // size of the icon
+  iconAnchor: [12, 41], // point of the icon which will correspond to marker's location
+  popupAnchor: [1, -34] // point from which the popup should open relative to the iconAnchor
+});
+// #70a32f = sex offense
+const policeMarker6 = L.icon({
+  iconUrl: 'https://api.geoapify.com/v1/icon/?type=material&color=%2370a32f&icon=local_police&noWhiteCircle&scaleFactor=2&apiKey=a16effabd94548a18edff66a4b5d7265',
+  iconSize: [25, 41], // size of the icon
+  iconAnchor: [12, 41], // point of the icon which will correspond to marker's location
+  popupAnchor: [1, -34] // point from which the popup should open relative to the iconAnchor
+});
+// #b5aa00 = accident
+const policeMarker7 = L.icon({
+  iconUrl: 'https://api.geoapify.com/v1/icon/?type=material&color=%23b5aa00&icon=local_police&noWhiteCircle&scaleFactor=2&apiKey=a16effabd94548a18edff66a4b5d7265',
+  iconSize: [25, 41], // size of the icon
+  iconAnchor: [12, 41], // point of the icon which will correspond to marker's location
+  popupAnchor: [1, -34] // point from which the popup should open relative to the iconAnchor
+});
+// #ffa600 = accident with impound
+const policeMarker8 = L.icon({
+  iconUrl: 'https://api.geoapify.com/v1/icon/?type=material&color=%23ffa600&icon=local_police&noWhiteCircle&scaleFactor=2&apiKey=a16effabd94548a18edff66a4b5d7265',
+  iconSize: [25, 41], // size of the icon
+  iconAnchor: [12, 41], // point of the icon which will correspond to marker's location
+  popupAnchor: [1, -34] // point from which the popup should open relative to the iconAnchor
+});
+// #60784a = theft, theft from auto
+const policeMarker9 = L.icon({
+  iconUrl: 'https://api.geoapify.com/v1/icon/?type=material&color=%2360784a&icon=local_police&noWhiteCircle&scaleFactor=2&apiKey=a16effabd94548a18edff66a4b5d7265',
+  iconSize: [25, 41], // size of the icon
+  iconAnchor: [12, 41], // point of the icon which will correspond to marker's location
+  popupAnchor: [1, -34] // point from which the popup should open relative to the iconAnchor
+});
+// #3c5f40 = auto, stolen or auto, stolen and recovered
+const policeMarker10 = L.icon({
+  iconUrl: 'https://api.geoapify.com/v1/icon/?type=material&color=%233c5f40&icon=local_police&noWhiteCircle&scaleFactor=2&apiKey=a16effabd94548a18edff66a4b5d7265',
+  iconSize: [25, 41], // size of the icon
+  iconAnchor: [12, 41], // point of the icon which will correspond to marker's location
+  popupAnchor: [1, -34] // point from which the popup should open relative to the iconAnchor
+});
+// #0d4e2d = breaking and entering (residential, commericial, vacant, school)
+const policeMarker11 = L.icon({
+  iconUrl: 'https://api.geoapify.com/v1/icon/?type=material&color=%230d4e2d&icon=local_police&noWhiteCircle&scaleFactor=2&apiKey=a16effabd94548a18edff66a4b5d7265',
+  iconSize: [25, 41], // size of the icon
+  iconAnchor: [12, 41], // point of the icon which will correspond to marker's location
+  popupAnchor: [1, -34] // point from which the popup should open relative to the iconAnchor
+});
+// #a87128 = vandalism
+const policeMarker12 = L.icon({
+  iconUrl: 'https://api.geoapify.com/v1/icon/?type=material&color=%23a87128&icon=local_police&noWhiteCircle&scaleFactor=2&apiKey=a16effabd94548a18edff66a4b5d7265',
+  iconSize: [25, 41], // size of the icon
+  iconAnchor: [12, 41], // point of the icon which will correspond to marker's location
+  popupAnchor: [1, -34] // point from which the popup should open relative to the iconAnchor
 });
 
 // map marker placement
@@ -185,7 +233,44 @@ function markerPlace(array, map) {
   array.forEach((item) => {
     const latitude = item.latitude;
     const longitude = item.longitude;
-    L.marker([latitude, longitude], {icon: blackIcon}).addTo(map);
+    const markerPopup = L.popup().innerText = item["clearance_code_inc_type"] + " | " + item["street_address"] + " | PGPD BEAT: " + item["pgpd_beat"];
+        // if statement to color code markers by crime type
+        if (item.clearance_code_inc_type === 'ASSAULT'){
+            L.marker([latitude, longitude], {icon: policeMarker1}).bindPopup(markerPopup).addTo(map);
+
+        } else if (item.clearance_code_inc_type === 'ASSAULT, WEAPON'){
+          L.marker([latitude, longitude], {icon: policeMarker2}).bindPopup(markerPopup).addTo(map);
+
+        } else if (item.clearance_code_inc_type === 'ASSAULT, SHOOTING'){
+          L.marker([latitude, longitude], {icon: policeMarker3}).bindPopup(markerPopup).addTo(map);
+
+        } else if (item.clearance_code_inc_type === "ROBBERY, RESIDENTIAL" || item.clearance_code_inc_type === "ROBBERY, COMMERCIAL" || item.clearance_code_inc_type === "ROBBERY, VEHICLE" || item.clearance_code_inc_type === "ROBBERY, OTHER") {
+          L.marker([latitude, longitude], {icon: policeMarker4}).bindPopup(markerPopup).addTo(map);
+
+        } else if (item.clearance_code_inc_type === 'HOMICIDE'){
+          L.marker([latitude, longitude], {icon:policeMarker5}).bindPopup(markerPopup).addTo(map);
+
+        } else if (item.clearance_code_inc_type === 'SEX OFFENSE'){
+          L.marker([latitude, longitude], {icon:policeMarker6}).bindPopup(markerPopup).addTo(map);
+
+        } else if (item.clearance_code_inc_type === 'ACCIDENT'){
+          L.marker([latitude, longitude], {icon:policeMarker7}).bindPopup(markerPopup).addTo(map);
+
+        } else if (item.clearance_code_inc_type === 'ACCIDENT WITH IMPOUND'){
+          L.marker([latitude, longitude], {icon:policeMarker8}).bindPopup(markerPopup).addTo(map);
+
+        } else if (item.clearance_code_inc_type === 'THEFT' || item.clearance_code_inc_type === 'THEFT FROM AUTO'){
+          L.marker([latitude, longitude], {icon:policeMarker9}).bindPopup(markerPopup).addTo(map);
+
+        } else if (item.clearance_code_inc_type === 'AUTO, STOLEN' || item.clearance_code_inc_type === 'AUTO, STOLEN & RECOVERED'){
+          L.marker([latitude, longitude], {icon:policeMarker10}).bindPopup(markerPopup).addTo(map);
+
+        } else if (item.clearance_code_inc_type === 'B & E, RESIDENTIAL' || item.clearance_code_inc_type === 'B & E, COMMERCIAL' || item.clearance_code_inc_type === 'B & E, VACANT' || item.clearance_code_inc_type === 'B & E, SCHOOL'){
+          L.marker([latitude, longitude], {icon:policeMarker11}).bindPopup(markerPopup).addTo(map);
+
+        } else if (item.clearance_code_inc_type === 'VANDALISM'){
+          L.marker([latitude, longitude], {icon:policeMarker11}).bindPopup(markerPopup).addTo(map);
+        }
   });
 }
 
