@@ -4,10 +4,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Safety Tracker</title>
+
+    <!-- stylesheets -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
     integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
     crossorigin=""/> 
     <link rel="stylesheet" href="test.css" />
+
+    <!-- libraries -->
     <!-- leaflet -->
     <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
     integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
@@ -28,7 +32,10 @@
         <!-- nav bar items -->
         <ul class="nav-list">
             <li class="list-item">
-                <a href="index.html">Home</a>
+                <a href="test.html">Crime Map</a>
+            </li>
+            <li class="list-item">
+                <a href="test2.html">Crime Graphic</a>
             </li>
             <li class="list-item">
                 <a href="about.html">About</a>
@@ -72,15 +79,18 @@
           <div class="card-02">
               <h3 class="title">Explore Crime Incidents by Type</h3>
 
-              <p class="text">Use the button below to load a random selection of
-                10 crime incidents on the map on the right. Then, use the table to filter the incidents by type of crime.
+              <p class="text">Use the button below to load crime incidents
+                on the map on the right. Then, reference the table to filter the incidents by type of crime. Click on
+                a marker to view additional details about the incident.
               </p>
 
               <form action="/api" class="box main_form">
+                <button class="button" type="submit" id="get-crime">Load data</button>
+                <br><br>
                 <label for="crime">Filter by Crime Type</label>
                 <input type="text" name="crime" id="crime"/>
                 <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
-                <button class="button" type="submit" id="get-crime">Load data</button>
+                <!-- <button class="button" type="submit" id="get-crime">Load data</button> -->
               </form>
               <br>
               <h3 class="title">Filterable Crime Types</h3>
@@ -129,11 +139,7 @@
       </div>
       <div class="row">
           <div class="card-02">
-              <h3 class="title">Bar</h3>
-              <canvas id="crimeBar"></canvas>
-          </div>
-          <div class="card-02">
-              <h3 class="title">Form</h3>
+              <h3 class="title">PGPD Beats</h3>
           </div>
       </div>
   </div>
