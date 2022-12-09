@@ -133,9 +133,9 @@ const policeMarker7 = L.icon({
   iconAnchor: [12, 41], // point of the icon which will correspond to marker's location
   popupAnchor: [1, -34] // point from which the popup should open relative to the iconAnchor
 });
-// #e15759 = accident with impound
+// #7d6648 = accident with impound
 const policeMarker8 = L.icon({
-  iconUrl: 'https://api.geoapify.com/v1/icon/?type=material&color=%23e15759&icon=local_police&noWhiteCircle&scaleFactor=2&apiKey=a16effabd94548a18edff66a4b5d7265',
+  iconUrl: 'https://api.geoapify.com/v1/icon/?type=material&color=%237d6648&icon=local_police&noWhiteCircle&scaleFactor=2&apiKey=a16effabd94548a18edff66a4b5d7265',
   iconSize: [25, 41], // size of the icon
   iconAnchor: [12, 41], // point of the icon which will correspond to marker's location
   popupAnchor: [1, -34] // point from which the popup should open relative to the iconAnchor
@@ -161,9 +161,9 @@ const policeMarker11 = L.icon({
   iconAnchor: [12, 41], // point of the icon which will correspond to marker's location
   popupAnchor: [1, -34] // point from which the popup should open relative to the iconAnchor
 });
-// #d37295 = vandalism
+// #5a5a5a = vandalism
 const policeMarker12 = L.icon({
-  iconUrl: 'https://api.geoapify.com/v1/icon/?type=material&color=%23d37295&icon=local_police&noWhiteCircle&scaleFactor=2&apiKey=a16effabd94548a18edff66a4b5d7265',
+  iconUrl: 'https://api.geoapify.com/v1/icon/?type=material&color=%235A5A5A&icon=local_police&noWhiteCircle&scaleFactor=2&apiKey=a16effabd94548a18edff66a4b5d7265',
   iconSize: [25, 41], // size of the icon
   iconAnchor: [12, 41], // point of the icon which will correspond to marker's location
   popupAnchor: [1, -34] // point from which the popup should open relative to the iconAnchor
