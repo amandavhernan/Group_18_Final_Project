@@ -85,9 +85,9 @@ body {
 #map {
   display: block;
   width: 500px;
-  height: 380px;
+  height: 400px;
   border: 3px solid #294557;
-  margin-top: .5rem;
+  margin-top: .75rem;
 }
 
 /* links + buttons */
@@ -95,10 +95,11 @@ body {
 .data-source {
   color: white;
   text-decoration: none;
-  background: #294557;
+  background: #3d6961;
   border-radius: 5px;
   padding: 6px;
   margin-left: 10px;
+  font-size: large;
 }
 
 .data-source:hover {
@@ -108,7 +109,7 @@ body {
 }
 
 .button {
-  background-color: #294557;
+  background-color: #3d6961;
   border: none;
   border-radius: 5px;
   color: white;
@@ -116,7 +117,7 @@ body {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: large;
 }
 .button:hover {
   background-color: #e1ddbf;
@@ -155,15 +156,15 @@ body {
 }
 
 .table thead th {
-  background-color: #294557;
-  border: solid 1px #294557;
+  background-color: #3d6961;
+  border: solid 1px #3d6961;
   color: white;
   padding: 10px;
   text-align: center;
 }
 
 .table tbody td {
-  border: solid 3px #294557;
+  border: solid 3px #3d6961;
   padding: 10px;
   text-align: center;
 }
