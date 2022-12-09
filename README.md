@@ -23,15 +23,13 @@ API (JSON): https://data.princegeorgescountymd.gov/resource/wb4e-w4nf.json
 
 #### JavaScript Libraries & Other Tools
 
-* What visualisation or other JS libraries does your project use?
-
 Our project primarily uses Leaflet.js. We also used Tableau to embed a dashboard that houses two additional maps. Another tool we used is Geoapify’s Marker Icon API Playground to create custom markers for our Leaflet.js map. This tool is free and only requires the use of an API key.
 
 Marker Icon API Playground: https://apidocs.geoapify.com/playground/icon/
 
 #### CSS Frameworks
 
-* What CSS frameworks did you use? What version of them?
+We used Flexbox to design our site and make it responsive to various screen sizes. 
 
 #### Information Problem
 
