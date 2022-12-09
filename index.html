@@ -76,22 +76,24 @@
           <div class="card-02">
               <h3 class="title">Explore Crime Incidents by Type</h3>
 
-              <p class="text">Use the button below to map and load a list of 15 random crime incidents
+              <p class="text">Use the button below to map and load a list of 30 random crime incidents
                 in the box on the right. Then, reference the table below to filter the incidents by type of crime. Click on
                 a marker to view additional details about the incident. Click on the button again to refresh and load new randomized data.
               </p>
 
               <form action="/api" class="box main_form">
                 <button class="button" type="submit" id="get-crime">Load data</button>
-                <br><br>
+                <br>
                 <label for="crime">Filter by Crime Type</label>
                 <input type="text" name="crime" id="crime"/>
                 <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
-                <!-- <button class="button" type="submit" id="get-crime">Load data</button> -->
               </form>
+                <h3 class="title">Map Legend</h3>
+                <br>
+                  <img src="legend.png" alt="Map legend" class="legend" width="300" height="500">
               <br>
               <h3 class="title">Filterable Crime Types</h3>
-              
+              <br>
               <table class="table">
                 <thead>
                   <tr>
@@ -145,10 +147,6 @@
   </div>
 
     <footer class="footer">
-        <p class="subtitle">Data Sources</p>
-        <a class="data-source" href="https://www.pgchealthzone.org/index.php?module=demographicdata&controller=index&action=index&topic1=County&topic2=Prince+George%27s#">Demographics</a>
-        <a class="data-source" href="https://data.princegeorgescountymd.gov/Public-Safety/Crime-Incidents-February-2017-to-Present/wb4e-w4nf">Crime</a>
-        <br></br>
         <p class="footer-text">University of Maryland | INST377</p>
         <p class="footer-text">Designed by Amanda Hernandez and Devika Govindarajan</p>
     </footer>

@@ -55,7 +55,7 @@ function injectHTML(list) {
 }
 
 function addCrimeIncidents(list) {
-  const range = [...Array(15).keys()];
+  const range = [...Array(30).keys()];
   const newArray = range.map((item) => {
     const index = getRandomIntInclusive(0, list.length);
     return list[index];
