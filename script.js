@@ -161,9 +161,9 @@ const policeMarker11 = L.icon({
   iconAnchor: [12, 41], // point of the icon which will correspond to marker's location
   popupAnchor: [1, -34] // point from which the popup should open relative to the iconAnchor
 });
-// #5a5a5a = vandalism
+// #d37295 = vandalism
 const policeMarker12 = L.icon({
-  iconUrl: 'https://api.geoapify.com/v1/icon/?type=material&color=%235A5A5A&icon=local_police&noWhiteCircle&scaleFactor=2&apiKey=a16effabd94548a18edff66a4b5d7265',
+  iconUrl: 'https://api.geoapify.com/v1/icon/?type=material&color=%23d37295&icon=local_police&noWhiteCircle&scaleFactor=2&apiKey=a16effabd94548a18edff66a4b5d7265',
   iconSize: [25, 41], // size of the icon
   iconAnchor: [12, 41], // point of the icon which will correspond to marker's location
   popupAnchor: [1, -34] // point from which the popup should open relative to the iconAnchor
