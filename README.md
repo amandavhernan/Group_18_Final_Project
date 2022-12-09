@@ -8,7 +8,7 @@ GitHub Pages: https://amandavhernan.github.io/Group_18_Final_Project/
 
 #### Target Browsers
 
-* iOS? Android? Which ones? Which versions?
+* Our target browsers are IOS, Android, and Chrome. Since we want our website to be compatiable with the most popular browsers so that more people can use our website. 
 
 #### API
 
