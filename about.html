@@ -37,18 +37,49 @@
                     way that elevates political agendas instead of community-based solutions. Additionally, biased crime data can lead to the spread 
                     of harmful stereotypes about certain areas or communities and the people who live there.</p>
                 <p class="text">To make this project into a reality, we used a publicly available API from the Prince George's County data portal to 
-                    extract data from the county's live crime incident dataset. The dataset spans roughly five years from 2017 to 2022 (present). It's 
+                    extract data from the county's live crime incident dataset. We used the crime incident data to build the interactive, filterable map found
+                    on the "home" page. The dataset spans roughly five years from 2017 to 2022 (present). It's 
                     also important to note that the data used to build this dashboard does not represent every call for service handled by the Prince 
-                    George's County Police Department. Using HTML, CSS, and JavaScript, we built this website to house our 
-                    safety tracker. Click on "home" in the header to explore the data.</p>      
+                    George's County Police Department. This site uses HTML, CSS, and JavaScript.</p>  
+                <p class="text">Our dashboard also highlights additional data about the Prince George's County community, focusing
+                    on demographics. We felt it was important to provide context about the county and the people who live here. We also
+                    used Tableau to build two interactive maps showing the different sectors the Prince George's County Police Department serves and where 
+                    each police station is located.
+                </p>
+            <h3 class="title">Complete List of Data Sources</h3>
+            <center>
+            <table class="table2">
+                <thead>
+                  <tr>
+                    <th>Data Source</th>
+                    <th>How We Used It</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><a class="data-source" href="https://data.princegeorgescountymd.gov/Public-Safety/Crime-Incidents-February-2017-to-Present/wb4e-w4nf">Crime incidents</a></td>
+                    <td>Interactive, filterable map that allows users to explore various types of crime</td>
+                  </tr>
+                  <tr>
+                    <td><a class="data-source" href="https://www.pgchealthzone.org/index.php?module=demographicdata&controller=index&action=index&topic1=County&topic2=Prince+George%27s#">County demographics</a></td>
+                    <td>Interactive race breakdown pie chart, context related to crime, population, and the economy</td>
+                  </tr>
+                  <tr>
+                    <td><a class="data-source" href="https://data.princegeorgescountymd.gov/Public-Safety/Police-Beats/vxhp-vpgw">PGPD beats & sectors</a></td>
+                    <td>Interactive map that highlights each PGPD sector and what district it's located in</td>
+                  </tr>
+                  <tr>
+                    <td><a class="data-source" href="https://data.princegeorgescountymd.gov/Public-Safety/County-Police-Stations/qkn8-5mhu">PGPD stations</a></td>
+                    <td>Interactive symbol map that shows where every county police station is located and provides 
+                        additional contact information</td>
+                  </tr>
+              </tbody>
+              </table>
+            </center>
         </div>
     </div>
 
     <footer class="footer">
-        <p class="subtitle">Data Sources</p>
-        <a class="data-source" href="https://www.pgchealthzone.org/index.php?module=demographicdata&controller=index&action=index&topic1=County&topic2=Prince+George%27s#">Demographics</a>
-        <a class="data-source" href="https://data.princegeorgescountymd.gov/Public-Safety/Crime-Incidents-February-2017-to-Present/wb4e-w4nf">Crime</a>
-        <br></br>
         <p class="footer-text">University of Maryland | INST377</p>
         <p class="footer-text">Designed by Amanda Hernandez and Devika Govindarajan</p>
     </footer>
