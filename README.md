@@ -1,19 +1,34 @@
 # Prince George's County Safety Tracker
 Designed by Amanda Hernández and Devika Govindarajan
 
-### How to use Markdown
-Markdown is a text notation system used in Discord, Whatsapp and similar to structure pages without writing HTML at all. You'll be using it for your documentation.
-* [Markdown guide](https://www.markdownguide.org/cheat-sheet/)
+GitHub Pages: https://amandavhernan.github.io/Group_18_Final_Project/
 
-README (top part of your README.md)
-Link to the Github Pages site where things are running
-Title of your project
-Description of target browsers (iOS? Android? Which ones? Which versions?)
-Documentation needs to be written in Markdown (*.md) files, nicely formatted
-Description of your project:
+### Target Browsers
 
-What API did you use, link to the API
-What visualisations does your project drive?
-What visualisation or other JS libraries does your project use?
-What CSS frameworks did you use? What version of them?
-What is your actual project trying to display and solve?
+* iOS? Android? Which ones? Which versions?
+
+### Project Description
+
+#### API
+
+We used the live crime incidents dataset housed inside Prince George’s County Open Data Portal. The dataset spans a roughly five year period from 2017 to 2022 (present) and is updated weekly. The dataset includes information about the type of incident, when and where the incident was reported, and what reporting area, beat, and sector the incident belongs to.
+
+API: https://data.princegeorgescountymd.gov/Public-Safety/Crime-Incidents-February-2017-to-Present/wb4e-w4nf
+
+API (JSON): https://data.princegeorgescountymd.gov/resource/wb4e-w4nf.json
+
+#### Visualizations
+
+* What visualisations does your project drive?
+
+#### JavaScript Libraries & Other Tools
+
+* What visualisation or other JS libraries does your project use?
+
+#### CSS Frameworks
+
+* What CSS frameworks did you use? What version of them?
+
+#### Information Problem
+
+* What is your actual project trying to display and solve?
