@@ -91,9 +91,9 @@ const policeMarker1 = L.icon({
     iconAnchor: [12, 41], // point of the icon which will correspond to marker's location
     popupAnchor: [1, -34] // point from which the popup should open relative to the iconAnchor
   });
-// #f28e2b = assault w/ weapon
+// #5c283f = assault w/ weapon
 const policeMarker2 = L.icon({
-    iconUrl: 'https://api.geoapify.com/v1/icon/?type=material&color=%23f28e2b&icon=local_police&noWhiteCircle&scaleFactor=2&apiKey=a16effabd94548a18edff66a4b5d7265',
+    iconUrl: 'https://api.geoapify.com/v1/icon/?type=material&color=%235c283f&icon=local_police&noWhiteCircle&scaleFactor=2&apiKey=a16effabd94548a18edff66a4b5d7265',
     iconSize: [25, 41], // size of the icon
     iconAnchor: [12, 41], // point of the icon which will correspond to marker's location
     popupAnchor: [1, -34] // point from which the popup should open relative to the iconAnchor
@@ -154,9 +154,9 @@ const policeMarker10 = L.icon({
   iconAnchor: [12, 41], // point of the icon which will correspond to marker's location
   popupAnchor: [1, -34] // point from which the popup should open relative to the iconAnchor
 });
-// #e39802 = breaking and entering (residential, commericial, vacant, school)
+// #ffa701 = breaking and entering (residential, commericial, vacant, school)
 const policeMarker11 = L.icon({
-  iconUrl: 'https://api.geoapify.com/v1/icon/?type=material&color=%23e39802&icon=local_police&noWhiteCircle&scaleFactor=2&apiKey=a16effabd94548a18edff66a4b5d7265',
+  iconUrl: 'https://api.geoapify.com/v1/icon/?type=material&color=%23ffa701&icon=local_police&noWhiteCircle&scaleFactor=2&apiKey=a16effabd94548a18edff66a4b5d7265',
   iconSize: [25, 41], // size of the icon
   iconAnchor: [12, 41], // point of the icon which will correspond to marker's location
   popupAnchor: [1, -34] // point from which the popup should open relative to the iconAnchor
