@@ -3,11 +3,11 @@ Designed by Amanda Hernández and Devika Govindarajan
 
 GitHub Pages: https://amandavhernan.github.io/Group_18_Final_Project/
 
-### Target Browsers
+### Project Description
+
+#### Target Browsers
 
 * iOS? Android? Which ones? Which versions?
-
-### Project Description
 
 #### API
 
