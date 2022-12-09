@@ -3,6 +3,7 @@ Designed by Amanda Hernández and Devika Govindarajan
 
 GitHub Pages: https://amandavhernan.github.io/Group_18_Final_Project/
 
+
 ### Project Description
 
 #### Target Browsers
@@ -19,7 +20,7 @@ API (JSON): https://data.princegeorgescountymd.gov/resource/wb4e-w4nf.json
 
 #### Visualizations
 
-* What visualisations does your project drive?
+* The main visualization of our wesbite is the map filter. Our map is accompanied by a filter to search different types of crimes. Once you load the data, a list of 30 crimes appear along with corresponding markers of where they occured. You can also search specific crimes in the filter box. The markers on the map are color coded by type of crime so that is is easier for the audience to see. When you hover over the markers, they show the exact location of where the crime occured as well. We also imbedded a Tableau map with the different police sectors as well as the address and contact information of the departments.
 
 #### JavaScript Libraries & Other Tools
 
