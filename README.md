@@ -8,7 +8,7 @@ GitHub Pages: https://amandavhernan.github.io/Group_18_Final_Project/
 
 #### Target Browsers
 
-* Our target browsers are IOS, Android, and Chrome. Since we want our website to be compatiable with the most popular browsers so that more people can use our website. 
+* Our target browsers are IOS, Android, and Chrome. Since we want our website to be compatiable with the most popular browsers so that more people can use our website. While you can still access our wesbite on yourp phone, it works better with laptops because a small screen wouldn't be able to capture and showcase all the important information at the same time. 
 
 #### API
 
@@ -30,7 +30,7 @@ Marker Icon API Playground: https://apidocs.geoapify.com/playground/icon/
 
 #### CSS Frameworks
 
-We used Flexbox to design our site and make it responsive to various screen sizes. 
+We used Flexbox to design our site and make it responsive to various screen sizes. The flexboxes allowed us to style the layout exactly how we intended and it was a big component of our website. 
 
 #### Information Problem
 
