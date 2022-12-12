@@ -2,6 +2,7 @@
 You are required to fill it in with documentation similar to that found in the Sequelize example for the course as part of your final project.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 GitHub Pages: https://amandavhernan.github.io/Group_18_Final_Project/
 
 
@@ -36,6 +37,11 @@ We used Flexbox to design our site and make it responsive to various screen size
 #### Information Problem
 
 The idea behind the project came from an understanding that some police departments are notorius for releasing skewed or misleading crime statistics. This is an information problem that affects many communities across the United States. This is an issue because crime data may contain inconsistencies that make it easy to misinterpret and spin facts or data in a way that elevates political agendas instead of community-based solutions. Additionally, biased crime data can lead to the spread of harmful stereotypes about certain areas or communities and the people who live there. Our dashboard serves as part of the solution to this information problem by offering users the opportunity to explore crime incidents on a map and view additional details such as where the crime was reported. 
+=======
+### How to use Markdown
+Markdown is a text notation system used in Discord, Whatsapp and similar to structure pages without writing HTML at all. You'll be using it for your documentation.
+* [Markdown guide](https://www.markdownguide.org/cheat-sheet/)
+>>>>>>> parent of 173a419 (Merge branch 'main' of https://github.com/amandavhernan/Group_18_Final_Project)
 =======
 ### How to use Markdown
 Markdown is a text notation system used in Discord, Whatsapp and similar to structure pages without writing HTML at all. You'll be using it for your documentation.
