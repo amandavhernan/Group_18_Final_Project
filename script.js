@@ -11,21 +11,12 @@ var chart = new Chart(ctx, {
 
   // data
   data: {
-<<<<<<< HEAD
-    labels: ['White', 'Black/African American', 'American Indian/Alaskan Native', 'Asian', 'Native Hawaiian/Pacific Islander', 'Other', 'Two or More Races'],
-    datasets: [{
-      label: 'Population by Race',
-      backgroundColor: ['#22585c', '#066d63', '#1d815b', '#4b9247', '#7fa02a', '#bca700', '#ffa600'],
-      data: [17.42, 62.01, 0.58, 4.21, 0.07, 11.93, 3.78]
-    }]
-=======
       labels: ["White", "Black/African American", "American Indian/Alaskan Native", "Asian", "Native Hawaiian/Pacific Islander", "Other", "Two or More Races"],
       datasets: [{
           label: "Population by Race",
           backgroundColor: ["#4e79a7", "#f28e2b", "#e15759", "#76b7b2", "#59a14f", "#b07aa1", "#ff9da7"],
           data: [17.42, 62.01, 0.58, 4.21, 0.07, 11.93, 3.78],
       }]
->>>>>>> f1cc16d66239ee00c988136cf19e5bf3ee6325d4
   },
 
   // configuration options go here
@@ -43,109 +34,6 @@ var chart = new Chart(ctx, {
   }
 });
 
-<<<<<<< HEAD
-// crime type bar chart
-
-/* var ctx = document.getElementById('crimeBar').getContext('2d');
-var chart = new Chart(ctx, {
-  // type of chart we want to create
-  type: 'bar',
-
-  // data
-  data: {
-    labels: ['1', '2', '3', '4', '5', '6', '7'],
-    datasets: [{
-      label: 'Types of Crimes',
-      backgroundColor: '#066d63',
-      data: [7, 6, 5, 4, 3, 2, 1]
-    }]
-  },
-
-  options: {
-    aspectRatio: 1,
-    responsive: true,
-    layout: {
-      padding: 10
-    },
-    title: {
-      display: true,
-      text: 'Crime Incidents Sorted by Frequency',
-      fontSize: 16
-    },
-    scales: {
-      yAxes: [{
-        ticks: {
-          beginAtZero: true
-        }
-      }]
-    }
-
-  }
-}); */
-
-function processCrimes(list) {
-  console.log('fired crime list');
-  const range = [...Array(15).keys()];
-  const newaray = range.map((item) => {
-    const index = getRandomInclusive(0, list.length);
-      return list[index];
-  });
-  return newArray;
-} 
-
-/*function initChart(chart, object) {
-  const labels = Object.keys(object);
-  const info = Object.keys(object).map((item) => object[item].length);
-
-  const data = {
-    labels: labels
-      datasets: [{
-          label: "Crime by Type",
-          backgroundColor: ["#22585c", "#066d63", "#1d815b", "#4b9247", "#7fa02a", "#bca700", "#ffa600"],
-          data: info
-      }]
-  };
-
-  const config = {
-    type: 'bar',
-    data: data,
-    options: {}
-  };
-
-  return new Chart(
-    chart,
-    config
-  );
-}
-*/
-/* function changeChart(chart, dataObject) {
-  const labels = Object.keys(dataObject);
-  const info = Object.keys(dataObject).map((item) => dataObject[item].length);
-
-  chart.data.labels = labels;
-  chart.data.datasets.forEach((set) => {
-    set.data = info;
-    return set;
-  });
-  chart.update();
-} */
-
-/*function shapeDataForLineChart(array) {
-  return array.reduce((collection, item) => {
-    if(!collection[item.clearance_code_inc_type]) {
-      collection[item.clearance_code_inc_type] = [item];
-    } else {
-      collection[item.clearance_code_inc_type].push(item);
-    }
-    return collection;
-  }, {});
-} */
-
-
-// map processing
-
-=======
->>>>>>> f1cc16d66239ee00c988136cf19e5bf3ee6325d4
 function getRandomIntInclusive(min, max) {
   const newMin = Math.ceil(min);
   const newMax = Math.floor(max);
@@ -193,16 +81,6 @@ function initMap() {
   return map;
 }
 
-<<<<<<< HEAD
-//  custom map marker
-const blackIcon = new L.Icon({
-  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-black.png',
-  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34],
-  shadowSize: [41, 41]
-=======
 //  custom map markers
 // https://apidocs.geoapify.com/samples/markers/leaflet-custom-marker/
 
@@ -289,7 +167,6 @@ const policeMarker12 = L.icon({
   iconSize: [25, 41], // size of the icon
   iconAnchor: [12, 41], // point of the icon which will correspond to marker's location
   popupAnchor: [1, -34] // point from which the popup should open relative to the iconAnchor
->>>>>>> f1cc16d66239ee00c988136cf19e5bf3ee6325d4
 });
 
 // map marker placement
@@ -300,11 +177,6 @@ function markerPlace(array, map) {
     }
   });
   array.forEach((item) => {
-<<<<<<< HEAD
-    const {latitude} = item;
-    const {longitude} = item;
-    L.marker([latitude, longitude], {icon: blackIcon}).addTo(map);
-=======
     const latitude = item.latitude;
     const longitude = item.longitude;
     const markerPopup = L.popup().innerText = item["clearance_code_inc_type"] + " | ADDRESS: " + item["street_address"] + " | PGPD SECTOR: " + item["pgpd_sector"];
@@ -345,7 +217,6 @@ function markerPlace(array, map) {
         } else if (item.clearance_code_inc_type === 'VANDALISM'){
           L.marker([latitude, longitude], {icon:policeMarker12}).bindPopup(markerPopup).addTo(map);
         }
->>>>>>> f1cc16d66239ee00c988136cf19e5bf3ee6325d4
   });
 }
 
