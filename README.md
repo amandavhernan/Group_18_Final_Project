@@ -1,6 +1,6 @@
 Designed by Amanda Hernández and Devika Govindarajan
 
-GitHub Pages: https://amandavhernan.github.io/Group_18_Final_Project/
+GitHub Pages: https://amandavhernan.github.io/group_18_final_project/
 
 
 ### Project Description
